@@ -1,8 +1,10 @@
-# CodePipeline test app
+# NodeJs App - CodePipeline Hands-on
 
-Small Node.js app for exercising AWS CodePipeline: green “Hello, World!” page, `/health`, and unit tests in the build.
+- Small Node.js app for exercising AWS CodePipeline.
+- Both the root `/` and `/health` paths return a simple HTML page, which displays an environment variable to confirm CodePipeline is fetching environment variables properly.
+- The app has unit tests which will be validated during the CI flow.
 
-## Suggested design
+## File Structure
 
 | Piece | Role |
 |-------|------|
