@@ -14,7 +14,7 @@ phases:
       - npm test
   post_build:
     commands:
-      - echo "Build succeeded"
+      - if [ "$CODEBUILD_BUILD_SUCCEEDING" = "1" ]; then echo "Build succeeded"; fi
 
 artifacts:
   files:
