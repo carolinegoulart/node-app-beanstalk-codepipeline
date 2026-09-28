@@ -4,17 +4,22 @@ phases:
   install:
     runtime-versions:
       nodejs: 20
+    commands:
+      - npm ci
   pre_build:
     commands:
-      - echo "Preparing static site artifact..."
+      - echo "Running unit tests..."
   build:
     commands:
-      - echo "Build complete — no compile step for static HTML"
+      - npm test
   post_build:
     commands:
-      - echo "Artifact ready for deploy stage"
+      - echo "Build succeeded"
 
 artifacts:
   files:
-    - index.html
-  name: static-site-$(date +%Y-%m-%d)
+    - package.json
+    - package-lock.json
+    - src/**/*
+    - public/**/*
+  name: node-app-$CODEBUILD_BUILD_ID
