@@ -16,12 +16,22 @@ Extra route `GET /api/greeting?name=You` returns JSON `{ "message": "Hello, You!
 ## Local run
 
 ```bash
+cp .env.example .env   # optional; repo includes defaults in .env.example
 npm ci
 npm test
 npm start
 ```
 
-- http://localhost:3000 — home page  
+Variables are loaded from `.env` at startup (`dotenv`). Example:
+
+```env
+environment=development
+PORT=3000
+```
+
+`.env` is gitignored; copy from `.env.example` or create your own. In AWS, set the same keys on the runtime (Beanstalk, ECS, etc.) — do not rely on committing `.env`.
+
+- http://localhost:3000 — home page (shows `environment` env var, default `development`)  
 - http://localhost:3000/health — health check  
 - http://localhost:3000/api/greeting?name=Pipeline  
 
