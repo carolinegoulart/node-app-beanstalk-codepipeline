@@ -1,4 +1,4 @@
-# NodeJs App - CodePipeline Hands-on
+# AWS CodePipeline Hands-on - NodeJs App
 
 - Small Node.js app for exercising AWS CodePipeline.
 - Both the root `/` and `/health` paths return a simple HTML page, which displays an environment variable to confirm CodePipeline is fetching environment variables properly.
