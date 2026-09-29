@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { buildGreeting } from "../src/greeting.js";
 
-describe("buildGreeting", () => {
+describe("buildGreeting tests", () => {
   it("uses World when no name is given", () => {
     assert.equal(buildGreeting(), "Hello, World!");
   });
